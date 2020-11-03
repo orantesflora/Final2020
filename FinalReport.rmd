@@ -26,20 +26,23 @@ $H_A$: The Alternative Hypothesis among the target population there is no relati
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->  
 
-Every question is og CAT ~CAT type
+Every question is of a CAT ~CAT type
 
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->  
 
-```{r}
-barchartGC(~infected + treatment,data=TrialData)
-DataF = filter(TrialData,sex=="F")
-barchartGC(~infected + treatment,data=TrialData, type="percent")
+
+```{r}  
+DataF = filter(TrialData,sex=="gal")
+barchartGC(~infected + treatment, data= DataF)
+barchartGC(~infected + treatment, data=DataF, type="percent")  
 
 ```
 
-Among females that contracted Aids twice as many took the placebo. Therefore it appears that the vaccine does have an effect.
+##Graphical Descriptive Results
+
+Among females that contracted Aids twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.
 
 # Discussion and Conclusion
 
