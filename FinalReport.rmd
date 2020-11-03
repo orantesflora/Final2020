@@ -52,7 +52,26 @@ barchartGC(~infected + treatment, data= DataG)
 barchartGC(~infected + treatment, data=DataG, type="percent",main="guys")  
 
 ```
+Its appears that the vaccine has a negative effect on the guys since they are more likely to get COVID19 if have the vaccine  
 
+##Graphical Descriptive Results  
+
+```{r}  
+DataGBTQ = filter(TrialData,LGBTQ=="gay")
+barchartGC(~infected + treatment, data= DataGBTQ)
+barchartGC(~infected + treatment, data=DataGBTQ,type="percent",main="gays")  
+
+```
+  
+##Graphical Description Results  
+
+```{r}
+DataDrugUser = filter(TrialData,DrugUser=="users")
+barchartGC(~infected + treatment, data= DataDrugUser)
+barchartGC(~infected + treatment, data=DataDrugUser, type="percent",main="user")  
+
+```
+  
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
