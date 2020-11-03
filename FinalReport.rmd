@@ -32,17 +32,26 @@ Every question is of a CAT ~CAT type
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->  
 
+##Graphical Descriptive Results
+
 
 ```{r}  
 DataF = filter(TrialData,sex=="gal")
 barchartGC(~infected + treatment, data= DataF)
-barchartGC(~infected + treatment, data=DataF, type="percent")  
+barchartGC(~infected + treatment, data=DataF, type="percent",main="gals")  
 
 ```
 
 ##Graphical Descriptive Results
 
-Among females that contracted Aids twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.
+Among females that contracted Aids twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.  
+
+```{r}  
+DataG = filter(TrialData,sex=="guy")
+barchartGC(~infected + treatment, data= DataG)
+barchartGC(~infected + treatment, data=DataG, type="percent",main="guys")  
+
+```
 
 # Discussion and Conclusion
 
