@@ -61,16 +61,15 @@ DataGBTQ = filter(TrialData,LGBTQ=="gay")
 barchartGC(~infected + treatment, data= DataGBTQ)
 barchartGC(~infected + treatment, data=DataGBTQ,type="percent",main="gays")  
 
-```
+```  
   
-##Graphical Description Results  
+  
+Its appears that the vaccine has a positive effect on the LGBTQ. There for it appears theres a positive affect.  
+ 
+ 
+###Numerical Summaries  
 
-```{r}
-DataDrugUser = filter(TrialData,DrugUser=="users")
-barchartGC(~infected + treatment, data= DataDrugUser)
-barchartGC(~infected + treatment, data=DataDrugUser, type="percent",main="user")  
 
-```
   
 # Discussion and Conclusion
 
