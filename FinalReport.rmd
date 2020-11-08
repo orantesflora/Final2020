@@ -68,9 +68,23 @@ Its appears that the vaccine has a positive effect on the LGBTQ. There for it ap
  
  
 ###Numerical Summaries  
-
-
-  
+```{r}
+table1 <- xtabs(~infected + treatment, data= DataF)
+rowPerc(table1)
+colPerc(table1)
+```
+###Numerical Summaries  
+```{r}
+table1 <- xtabs(~infected + treatment, data= DataG)
+rowPerc(table1)
+colPerc(table1)
+```
+ ###Numerical Summaries  
+```{r}
+table1 <- xtabs(~infected + treatment, data= DataGBTQ)
+rowPerc(table1)
+colPerc(table1)
+``` 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
