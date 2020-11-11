@@ -8,7 +8,10 @@ output: html_document
 ```{r include=FALSE,echo=FALSE}
 require(tidyverse)
 require(tigerstats)
-TrialData <-read.csv(file="covid91.csv",header=TRUE)
+require(forcats)
+OldData <-read.csv(file="covid91.csv",header=TRUE)  
+#record aids to say covid and then remove the annoying "x" from the dataframe
+FinalData <- OldData %>% mutate(infected = recode(infected, aids = "covid", none = "OK")) %>% select(-one_of("X"))
 ```
 
 # Introduction
@@ -36,7 +39,7 @@ Every question is of a CAT ~CAT type
 
 
 ```{r}  
-DataF = filter(TrialData,sex=="gal")
+DataF = filter(OldData,sex=="gal")
 barchartGC(~infected + treatment, data= DataF)
 barchartGC(~infected + treatment, data=DataF, type="percent",main="gals")  
 
@@ -47,7 +50,7 @@ barchartGC(~infected + treatment, data=DataF, type="percent",main="gals")
 Among females that contracted Aids twice as many took the placebo. Therefore it appears that the vaccine does have a positive effect.  
 
 ```{r}  
-DataG = filter(TrialData,sex=="guy")
+DataG = filter(OldData,sex=="guy")
 barchartGC(~infected + treatment, data= DataG)
 barchartGC(~infected + treatment, data=DataG, type="percent",main="guys")  
 
@@ -57,7 +60,7 @@ Its appears that the vaccine has a negative effect on the guys since they are mo
 ##Graphical Descriptive Results  
 
 ```{r}  
-DataGBTQ = filter(TrialData,LGBTQ=="gay")
+DataGBTQ = filter(OldData,LGBTQ=="gay")
 barchartGC(~infected + treatment, data= DataGBTQ)
 barchartGC(~infected + treatment, data=DataGBTQ,type="percent",main="gays")  
 
